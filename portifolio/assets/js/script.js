@@ -1,0 +1,1 @@
+let inputNome = document.querySelector('nome')
