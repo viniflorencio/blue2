@@ -12,7 +12,7 @@ html, body{
 
 /* Comentario */
 nav{
-   background-color: #3359ec;
+   background-color: #e9ecef;
    font-weight: 500;
    position: fixed;
    width: 100%;
@@ -22,22 +22,26 @@ nav ul{
    list-style: none;
    display: flex;
    justify-content: center;
+
 }
 
 nav ul li{
-   padding: 1rem;
+   padding: .5rem;
 }
 
 nav ul li a{
    text-decoration: none;
-   color: #fff;
+   color:black;
+   transition: .6s ease-out;
 }
+
 
 header{
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 3rem;
+   padding: 8rem;
+   background-color: rgba(0, 0, 0, 0.959);
 }
 
 header div#img-rocket {
@@ -48,13 +52,15 @@ header div#img-rocket {
 header div p{
    font-size: 2vw;
    font-weight: 700;
-   color: #3359ec;
+   color: white;
+   margin-top: 5rem;
 }
 
 header div span{
    font-size: 1vw;
    font-weight: 500;
-   color: #0066ff;
+   color:white;
+
 }
 
 header div#img-rocket img{
@@ -65,14 +71,14 @@ section#sobre-mim{
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 4rem;
-   background-color: #3359ec;
+   padding: 10rem;
+   background-color: #edf2fb;
 }
 
 
 section#sobre-mim div img{
-   width: 60%;
-   border-radius: 50%;
+   width: 90%;
+   border-radius: 10%;
    display: block;
    margin: auto;
 }
@@ -80,11 +86,13 @@ section#sobre-mim div img{
 section#sobre-mim div p{
    font-size: 1.1vw;
    text-align: justify;
-   color: #fff;
+   color: #343a40;
    line-height: 2.5rem;
+   margin-left: 10rem;
 }
 
 section#projetos{
+   background-image: url('../img/fundoprojeto.jpg');
    display: flex; /* Aciona o flex-box e coloca um item do lado do outro automaticamente */
    justify-content: center; /* Alinha os itens horizontalmente */
    align-items: center; /* Alinha os itens verticalmente */
@@ -116,9 +124,9 @@ section#projetos div{
 }
 
 section#projetos div button{
-   border: 1px solid #3359ec;
+   border: 1px solid #212529;
    background-color: #fff;
-   color: #3359ec;
+   color: #212529;
    padding: 1rem;
    font-size: .8vw;
    font-weight: 600;
@@ -131,14 +139,15 @@ section#projetos div button{
 }
 
 section#projetos div button:hover{
-   background-color: #3359ec;
+   background-color: #212529;
    color: #fff;
    transform: scale(1.2);
 }
 
 section#habilidades{
+
    padding: 3rem 10rem 3rem 10rem;
-   background-color: #d7e7ff;
+   background-color: #edf2fb;
 }
 
 section#habilidades h2{
@@ -155,21 +164,21 @@ section#habilidades p{
 
 section#habilidades div{
    display: flex;
-   border: 1px solid #3359ec;
+   border: 1px solid #212529;
    border-radius: 1rem;
 }
 
 section#habilidades div span#python{
-   background-color: #3359ec;
+   background-color: #212529;
    color: #fff;
    text-align: center;
    padding: .3rem;
    border-radius: 1rem;
-   width: 80%;
+   width: 60%;
 }
 
 section#habilidades div span#html{
-   background-color: #3359ec;
+   background-color: #212529;
    color: #fff;
    text-align: center;
    padding: .3rem;
@@ -178,18 +187,32 @@ section#habilidades div span#html{
 }
 
 section#habilidades div span#css{
-   background-color: #3359ec;
+   background-color: #212529;
    color: #fff;
    text-align: center;
    padding: .3rem;
    border-radius: 1rem;
-   width: 30%;
+   width: 35%;
+}
+
+section#habilidades div span#js{
+   background-color: #212529;
+   color: #fff;
+   text-align: center;
+   padding: .3rem;
+   border-radius: 1rem;
+   width: 40%;
 }
 
 
 /* Seção de contato */
 
 section#contato {
+   background-image: url('../img/fundocontato.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
    padding: 3rem 10rem 3rem 10rem; /* Sentido horario: Cima, direita , baixo, esquerda */
    display: flex;
    justify-content: center;
@@ -213,7 +236,7 @@ section#contato div#redes div#icons{
 
 section#contato div#redes div#icons a{
    text-decoration: none; /* Tira o sublinhado e toda decoração de texto do link */
-   color: #0066ff;
+   color: rgba(0, 0, 0, 0.87);
    font-size: 4rem;
    padding: 2rem;
    transition: all .4s ease-out; /*  Suavisa a transição de cores no hover */
@@ -221,7 +244,7 @@ section#contato div#redes div#icons a{
 
 /* o :hover serve para quando passar o mouse por cima do elemento fazer algo */
 section#contato div#redes div#icons a:hover{
-   color: #71aaff;
+   color: #ced4da;
 }
 
 section#contato div#redes div#icons a i{
@@ -266,22 +289,22 @@ section#contato div#form form label{
 }
 
 section#contato div#form form button{
-   border: 1px solid #3359ec;
-   background-color: #fff;
-   color: #3359ec;
-   padding: 1rem;
+   border: 1px solid #ced4da;
+   background-color: rgba(0, 0, 0, 0.856);
+   color: white;
+   padding: 2rem;
    font-size: .8vw;
    font-weight: 600;
-   border-radius: .5rem;
+   border-radius: .9rem;
    display: block;
    margin: auto;
    cursor: pointer;
    transition: .6s ease-out;
-   width: 40%;
+   width: 30%;
 }
 
 section#contato div#form form button:hover{
-   background-color: #3359ec;
-   color: #fff;
+   background-color: #dee2e6;
+   color: #495057;
    transform: scale(1.2);
 }
