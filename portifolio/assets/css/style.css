@@ -84,15 +84,17 @@ section#sobre-mim div img{
 }
 
 section#sobre-mim div p{
+   display: flex;
    font-size: 1.1vw;
    text-align: justify;
    color: #343a40;
    line-height: 2.5rem;
    margin-left: 10rem;
+   flex-wrap: wrap;
 }
 
 section#projetos{
-   background-image: url('../img/fundoprojeto.jpg');
+   background-image: url('../img/fundoprojetos.png');
    display: flex; /* Aciona o flex-box e coloca um item do lado do outro automaticamente */
    justify-content: center; /* Alinha os itens horizontalmente */
    align-items: center; /* Alinha os itens verticalmente */
