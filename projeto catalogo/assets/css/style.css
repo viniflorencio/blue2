@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+*{
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #101010;
+  color: white;
+}
+
+
+html, body {
+  scroll-behavior: smooth;
+  height: 100%;
+  width: 100%;
+}
+
+section{
+  height: 100%;
+}
+
+/* INICIO DAS ESTILIZAÇÕES DA NAV BAR */
+
+header nav{
+  background: #7A16414D;
+}
+
+header nav img{
+  background-color: transparent;
+}
+
+body header nav button.navbar-toggler.ml-auto.collapsed{
+  background-color: #7a164100;
+}
+
+.ml-auto{
+  background-color: transparent;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+/* FIM DAS ESTILIZAÇÕES DA NAV BAR */
+
+
+section{
+  padding-left: 2rem;
+}
+
+
+section div#backBtn button{
+  border: none;
+  background-color: #101010;
+  color: white;
+  font-size: 2vw;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 3rem;
+  cursor: pointer;
+  transition: 0.6s ease-in-out;
+  width: 212px;
+  height: 74px;
+  left: 84px;
+  top: 192px;
+}
+
+section div#backBtn button:hover{
+  transform: scale(1.1);
+}
+
+
+section div#infoFilme {
+  display: flex;
+
+}
+
+section div#infoFilme img{
+  padding: 1rem;
+  border-radius: 20%;
+  margin-top: 0rem;
+}
+
+section div#infoFilme div#nomeFilme h2{
+  display: flex;
+  padding: 2rem;
+  height: 66px;
+  left: 355px;
+  top: 316px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 64px;
+
+}
+
+section div#infoFilme div#sinopse{
+  display: flex;
+  width: 100%;
+}
+
+section div#infoFilme article{
+  padding: 0.5rem;
+  margin-top: 0rem;
+}
+
+section div#infoFilme div#sinopse p{
+  flex-wrap: wrap;
+  color: white;
+  width: 796px;
+  height: 233px;
+  left: 376px;
+  top: 403px;
+  font-family: Segoe UI;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 48px;
+  margin-left: 20rem;
+  
+}
+
+
+section div#bottom {
+  padding: 2rem;
+  padding-top: 5rem;
+}
+
+section div#bottom button#trailer{
+  border: 1px solid #7A16414D;
+  background-color: #7A1641;
+  border-radius: 3rem;
+  color: white;
+  width: 309px;
+  height: 92px;
+  left: 1074px;
+  top: 720px;
+  cursor: pointer;
+  transition: 0.6s ease-in-out;
+  
+
+}
+
+section#bottom button#trailer:hover{
+  transform: scale(1.1);
+}
+
+ 

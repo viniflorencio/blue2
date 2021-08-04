@@ -8,11 +8,15 @@
 
 # Instalar o flask_mail no terminal com o seguinte código: pip install Flask-Mail
 
-from flask import Flask, render_template, redirect, request
+from flask import Flask, render_template, redirect, request, flash
 from flask_mail import Mail, Message #Importa o Mail e o Message do flask_mail para facilitar o envio de emails
+from flask_sqlalchemy import SQLAlchemy
+
 
 
 app = Flask(__name__)
+app.secret_key = 'bluedtech'
+
 
 # Configuração do envio de email.
 mail_settings = {
@@ -27,6 +31,9 @@ mail_settings = {
 app.config.update(mail_settings) #atualizar as configurações do app com o dicionário mail_settings
 mail = Mail(app) # atribuir a class Mail o app atual.
 
+app.config ['SQLALCHEMY_DATABASE_URI'] = 'postgresql://sdkpdmth:Xm7pDxcHxpjsPPF-ya2rM8je2Wls4Szh@kesavan.db.elephantsql.com/sdkpdmth'
+db = SQLAlchemy(app)
+
 
 #Classe para capturar as informações do formulário de forma mais organizada
 class Contato:
@@ -35,10 +42,67 @@ class Contato:
       self.email = email
       self.mensagem = mensagem
 
+
+
+class Projeto(db.Model):
+   id = db.Column(db.Integer, primary_key = True, autoincrement = True)
+   nome = db.Column(db.String(150), nullable = False)
+   imagem = db.Column(db.String(500), nullable = False)
+   descricao = db.Column(db.String(500), nullable = False)
+   link = db.Column(db.String(300), nullable = False),
+
+   def __init__(self,nome,imagem,descricao,link):
+      self.nome = nome
+      self.imagem = imagem
+      self.descricao = descricao
+      self.link = link
+
 # Rota principal apenas para renderizar a página principal.
 @app.route('/')
 def index():
    return render_template('index.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/adm')
+def adm():
+   projetos = Projeto.query.all()
+   return render_template('adm.html', listaProjetos = projetos)
+
+
+@app.route('/new', methods =['POST', 'GET'])
+def new():
+   if request.method == 'POST':
+      projeto = Projeto(
+         request.form['nome'],
+         request.form['imagem'],
+         request.form['descricao'],
+         request.form['link']
+      )
+      db.session.add(projeto)
+      db.session.commit()
+      return redirect('/adm')
+
+
+
+
+
+
+
+
+
 
 # Rota de envio de email.
 @app.route('/send', methods=['GET', 'POST'])
@@ -65,4 +129,5 @@ def send():
    return render_template('send.html', formContato=formContato) # Renderiza a página de confirmação de envio.
 
 if __name__ == '__main__':
+   db.create_all()
    app.run(debug=True)
